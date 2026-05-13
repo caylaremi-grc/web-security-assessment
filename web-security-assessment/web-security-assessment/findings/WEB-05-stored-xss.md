@@ -1,14 +1,14 @@
 # Stored XSS
 
 ## Description
-Malicious script stored in database and executed later.
+Stored XSS occurs when a malicious script is injected into comments, messages, or other input fields and stored in the database. The script is then served to and executed in the browsers of users who view the affected page or content.
 
 ## Impact
 - Affects all users
 - Persistent attack
 
 ## Proof of Concept
-Describe how the attack works (step-by-step)
+A malicious script has been entered and saved in a picture comment section.
 
 ## Evidence
 - Screenshot:
@@ -18,4 +18,10 @@ Describe how the attack works (step-by-step)
 
 
 ## Recommendation
-- Sanitize input before storing
+- Validate and sanitize all user input on the server side.
+- Encode/escape output based on context (HTML, attributes, JavaScript, URLs).
+- Avoid rendering raw user input (e.g., no innerHTML).
+- Use secure frameworks that auto-escape output by default.
+- Implement a Content Security Policy (CSP) to limit script execution.
+- Store data as plain text and only format it safely at display time.
+- Regularly test for XSS vulnerabilities during security reviews.
