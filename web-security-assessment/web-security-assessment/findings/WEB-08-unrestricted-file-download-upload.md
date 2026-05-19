@@ -44,6 +44,3 @@ This confirms that:
 - Apply least-privilege permissions to upload directories.
 - Implement antivirus/malware scanning for uploaded files.
 - Restrict direct access to uploaded content when not required.
-
-- 
-- 
