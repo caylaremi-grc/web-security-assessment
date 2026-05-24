@@ -63,16 +63,3 @@ By analyzing response length, HTTP status codes, and redirects, it was possible 
 - Use generic authentication error messages such as "Invalid credentials" for all failures.
 - Monitor and log repeated failed login attempts for detection and alerting.
 
-
-
-
-
-
-
-
-  
-
-
-## Recommendation
-- 
-- 
