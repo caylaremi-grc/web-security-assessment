@@ -1,4 +1,4 @@
-#  (WEB-09-path-transversal)
+#  Path Transversal
 
 ## Description
 Path Traversal is a vulnerability where an application does not properly validate user-supplied file paths.
