@@ -1,4 +1,4 @@
-#  (WEB-08-unrestricted-file-download/upload)
+#  Unrestricted File Download/Upload
 
 ## Description
 This vulnerability occurs when a web application does not properly validate uploaded files and allows users to upload executable files such as PHP scripts.
