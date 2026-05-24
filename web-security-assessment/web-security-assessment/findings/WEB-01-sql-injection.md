@@ -14,11 +14,11 @@ After entering a payload in the login page’s name input, it returned a true va
 ## Evidence
 - Screenshots:
   
-<img width="292" height="257" alt="image" src="https://github.com/user-attachments/assets/5c26fdd2-7797-474c-a738-87d9cd8514c7" />
+<img width="292" height="257" alt="image" src="https://github.com/user-attachments/assets/5c26fdd2-7797-474c-a738-87d9cd8514c7" />  
 
-<img width="399" height="338" alt="image" src="https://github.com/user-attachments/assets/4e202055-f4d6-4a95-833d-2062b9011c94" />
+<img width="399" height="338" alt="image" src="https://github.com/user-attachments/assets/4e202055-f4d6-4a95-833d-2062b9011c94" />  
 
-<img width="196" height="214" alt="image" src="https://github.com/user-attachments/assets/5e01f44a-c0b3-4cbe-850d-db40483906dd" />
+<img width="196" height="214" alt="image" src="https://github.com/user-attachments/assets/5e01f44a-c0b3-4cbe-850d-db40483906dd" />  
 
 ## Recommendation
 - Use parameterized queries (prepared statements)
