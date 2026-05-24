@@ -1,4 +1,4 @@
-#  (WEB-06-union-sqli)
+#  Union-sqli
 
 ## Description
 
