@@ -1,4 +1,4 @@
-# SQL Injection (WEB-01)
+# SQL Injection 
 
 ## Description
 SQL Injection occurs when user input is directly used in SQL queries without proper sanitization.
