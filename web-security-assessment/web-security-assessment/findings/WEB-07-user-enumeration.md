@@ -5,15 +5,11 @@ User enumeration was identified during testing of the login functionality. The a
 
 By analyzing response length, HTTP status codes, and redirects, it was possible to distinguish valid usernames and eventually valid credentials.
 
----
-
 ## Impact
 - Allows attackers to identify valid usernames in the system.
 - Enables targeted brute-force and credential stuffing attacks.
 - Facilitates account takeover attempts by narrowing down valid credentials.
 - Provides attackers with a reliable method to enumerate users through automated tools.
-
----
 
 ## Proof of Concept
 ### Username Enumeration via Response Analysis
@@ -27,8 +23,6 @@ By analyzing response length, HTTP status codes, and redirects, it was possible 
 - Invalid usernames returned consistent response lengths.
 - One username produced a noticeably different (higher) response length, indicating a valid account.
 
----
-
 ### Password Validation via Intruder Attack
 1. After identifying a valid username, a second Intruder attack was performed.
 2. A password list was used against the confirmed username.
@@ -37,8 +31,6 @@ By analyzing response length, HTTP status codes, and redirects, it was possible 
 **Observation:**
 - Incorrect passwords returned HTTP `200 OK`.
 - A correct password triggered HTTP `302 Found`, indicating successful authentication and redirect.
-
----
 
 ## Evidence
 - Screenshots:
