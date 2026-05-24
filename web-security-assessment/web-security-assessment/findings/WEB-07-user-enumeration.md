@@ -1,14 +1,44 @@
 #  User Enumeration
 
 ## Description
+User enumeration was identified during testing of the login functionality. The application reveals differences in responses based on whether a username exists and whether credentials are valid. This behavior was confirmed using Burp Suite Intruder by testing multiple username and password combinations.
 
+By analyzing response length, HTTP status codes, and redirects, it was possible to distinguish valid usernames and eventually valid credentials.
+
+---
 
 ## Impact
-- 
-- 
-- 
+- Allows attackers to identify valid usernames in the system.
+- Enables targeted brute-force and credential stuffing attacks.
+- Facilitates account takeover attempts by narrowing down valid credentials.
+- Provides attackers with a reliable method to enumerate users through automated tools.
+
+---
 
 ## Proof of Concept
+### Username Enumeration via Response Analysis
+1. A login request was intercepted using Burp Suite.
+2. An initial request was sent using an invalid username and password.
+3. The request was forwarded to Burp Intruder with a list of usernames.
+4. Payload positions were set on the username parameter.
+5. Responses were analyzed based on response length differences.
+
+**Observation:**
+- Invalid usernames returned consistent response lengths.
+- One username produced a noticeably different (higher) response length, indicating a valid account.
+
+---
+
+### Password Validation via Intruder Attack
+1. After identifying a valid username, a second Intruder attack was performed.
+2. A password list was used against the confirmed username.
+3. Responses were analyzed based on HTTP status codes.
+
+**Observation:**
+- Incorrect passwords returned HTTP `200 OK`.
+- A correct password triggered HTTP `302 Found`, indicating successful authentication and redirect.
+
+---
 
 ## Evidence
 - Screenshots:
@@ -24,8 +54,14 @@
 <img width="517" height="362" alt="image" src="https://github.com/user-attachments/assets/ac689480-db30-470d-b739-c7c436369ce4" />
 <img width="627" height="264" alt="image" src="https://github.com/user-attachments/assets/aaf47a15-e9bd-492c-9884-ebcd998a2dd9" />
 
-
-
+## Recommendation
+- Ensure consistent responses for valid and invalid usernames (same status code and response message).
+- Avoid disclosing whether a username exists during authentication attempts.
+- Normalize response length and timing differences to prevent inference attacks.
+- Implement rate limiting on login endpoints to prevent automated enumeration.
+- Introduce account lockout or progressive delays after multiple failed attempts.
+- Use generic authentication error messages such as "Invalid credentials" for all failures.
+- Monitor and log repeated failed login attempts for detection and alerting.
 
 
 
