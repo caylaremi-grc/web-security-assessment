@@ -19,7 +19,7 @@ A malicious script was injected into an input field (e.g. search parameter / URL
 - <script>alert(1)</script>  
 
 **OR URL-based:**  
-https://target.com/search?q=<script>alert(1)</script>  
+- https://target.com/search?q=<script>alert(1)</script>  
 
 ## Evidence
 - Screenshots:
