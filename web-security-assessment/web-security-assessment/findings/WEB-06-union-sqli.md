@@ -10,7 +10,7 @@ This vulnerability allows an attacker to manipulate SQL queries using UNION-base
 - Potential full database compromise depending on privileges
 
 ## Proof of Concept
-**Determining the Number of Columns**
+**Determining the Number of Columns:**  
 The vulnerability was tested using two common techniques to determine the number of columns returned by the SQL query:
 - `ORDER BY`
 - `UNION SELECT`
