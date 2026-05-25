@@ -15,9 +15,9 @@ The vulnerability was tested using two common techniques to determine the number
 - `ORDER BY`
 - `UNION SELECT`
 Example payloads:
-' UNION SELECT NULL--
-' UNION SELECT NULL,NULL--
-' UNION SELECT NULL,NULL,NULL--
+' UNION SELECT NULL--  
+' UNION SELECT NULL,NULL--  
+' UNION SELECT NULL,NULL,NULL--  
 
 ## Evidence Step 1 - Determining the Number of Columns
 **Method 1 — ORDER BY**
