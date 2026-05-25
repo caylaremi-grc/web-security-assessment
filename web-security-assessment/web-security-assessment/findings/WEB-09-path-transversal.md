@@ -20,7 +20,7 @@ Path Traversal is a vulnerability that occurs when an application does not prope
 
 **Payload Example:**  
 
-../../../etc/passwd 
+- ../../../etc/passwd 
   
 ## Evidence
 - Screenshots:
