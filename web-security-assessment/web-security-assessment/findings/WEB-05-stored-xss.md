@@ -1,14 +1,21 @@
 # Stored XSS
 
 ## Description
-Stored XSS occurs when a malicious script is injected into comments, messages, or other input fields and stored in the database. The script is then served to and executed in the browsers of users who view the affected page or content.
+Stored Cross-Site Scripting (XSS) occurs when malicious input is saved on the server (e.g., in a database) and later displayed to users without proper sanitization or encoding. When other users view the affected content, the script executes in their browser.
 
 ## Impact
-- Affects all users
-- Persistent attack
+- Affects all users who view the stored content
+- Persistent attack (remains until removed)
+- Session hijacking and account takeover
+- Defacement or phishing attacks
+- Execution of arbitrary JavaScript in victims’ browsers
 
 ## Proof of Concept
-A malicious script has been entered and saved in a picture comment section.
+A malicious script was injected into the picture comment section and stored in the database. When the comment was later retrieved and displayed by the application, the script executed in the browser of users viewing the page, confirming a Stored XSS vulnerability.
+
+**Example Payload:**  
+
+- <script>alert(1)</script>  
 
 ## Evidence
 - Screenshot:
@@ -16,12 +23,9 @@ A malicious script has been entered and saved in a picture comment section.
 <img width="611" height="302" alt="image" src="https://github.com/user-attachments/assets/e2441610-2d26-4b02-972a-01735be7a2e7" />
 <img width="605" height="237" alt="image" src="https://github.com/user-attachments/assets/5276bd01-9d87-4c8a-bcb2-6f04b915271e" />
 
-
 ## Recommendation
-- Validate and sanitize all user input on the server side.
-- Encode/escape output based on context (HTML, attributes, JavaScript, URLs).
-- Avoid rendering raw user input (e.g., no innerHTML).
-- Use secure frameworks that auto-escape output by default.
-- Implement a Content Security Policy (CSP) to limit script execution.
-- Store data as plain text and only format it safely at display time.
-- Regularly test for XSS vulnerabilities during security reviews.
+Sanitize and validate all user input before storing it
+Escape output before rendering data in HTML
+Use Content Security Policy (CSP) to reduce impact
+Apply allow-lists for allowed HTML tags if rich text is required
+Avoid directly rendering database content without encoding
