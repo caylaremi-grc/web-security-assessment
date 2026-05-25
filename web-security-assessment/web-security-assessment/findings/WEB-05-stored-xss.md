@@ -24,8 +24,8 @@ A malicious script was injected into the picture comment section and stored in t
 <img width="605" height="237" alt="image" src="https://github.com/user-attachments/assets/5276bd01-9d87-4c8a-bcb2-6f04b915271e" />
 
 ## Recommendation
-Sanitize and validate all user input before storing it
-Escape output before rendering data in HTML
-Use Content Security Policy (CSP) to reduce impact
-Apply allow-lists for allowed HTML tags if rich text is required
-Avoid directly rendering database content without encoding
+- Sanitize and validate all user input before storing it
+- Escape output before rendering data in HTML
+- Use Content Security Policy (CSP) to reduce impact
+- Apply allow-lists for allowed HTML tags if rich text is required
+- Avoid directly rendering database content without encoding
