@@ -13,11 +13,11 @@ This vulnerability allows an attacker to manipulate SQL queries using UNION-base
 **Determining the Number of Columns:**  
 The vulnerability was tested using two common techniques to determine the number of columns returned by the SQL query:
 - `ORDER BY`
-Example payloads:
-' ORDER BY 1--
-' ORDER BY 2--
-' ORDER BY 3--
-' ORDER BY 4--  
+Example payloads:  
+' ORDER BY 1--  
+' ORDER BY 2--  
+' ORDER BY 3--  
+' ORDER BY 4--   
 - `UNION SELECT`
 Example payloads:  
 ' UNION SELECT NULL--  
