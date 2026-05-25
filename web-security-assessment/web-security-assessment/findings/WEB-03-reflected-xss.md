@@ -16,7 +16,6 @@ Reflected Cross-Site Scripting (XSS) occurs when user input is immediately retur
 A malicious script was injected into an input field (e.g. search parameter / URL parameter). The application reflected the unsanitized input directly in the response without proper encoding. As a result, the injected JavaScript executed in the browser when the crafted URL was loaded, confirming a Reflected XSS vulnerability.  
 
 **Example Payload:**  
-```html
 <script>alert(1)</script>
 
 **OR URL-based:**
