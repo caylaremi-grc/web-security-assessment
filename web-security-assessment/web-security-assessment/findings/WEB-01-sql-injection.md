@@ -9,7 +9,7 @@ SQL Injection occurs when user input is directly used in SQL queries without pro
 - Database compromise
 
 ## Proof of Concept
-After entering a payload in the login page’s name input, it returned a true value from the database and commented out the rest of the query, allowing any password value to bypass the authentication process.
+After entering a payload in the login page’s name input, it returned a true value from the database and commented out the rest of the query, allowing any password value to bypass the authentication process.  
 **Payload Used:**  
 ' OR 1=1--  
 **Result:**  
