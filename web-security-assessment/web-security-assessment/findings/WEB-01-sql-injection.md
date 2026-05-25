@@ -10,7 +10,12 @@ SQL Injection occurs when user input is directly used in SQL queries without pro
 
 ## Proof of Concept
 After entering a payload in the login page’s name input, it returned a true value from the database and commented out the rest of the query, allowing any password value to bypass the authentication process.
-
+**Payload Used:**  
+' OR 1=1--  
+**Result:**  
+- The condition OR 1=1 always evaluates to TRUE  
+- The -- comments out the rest of the SQL query (including password check)  
+- Authentication was bypassed successfully  
 ## Evidence
 - Screenshots:  
 <img width="292" height="257" alt="image" src="https://github.com/user-attachments/assets/5c26fdd2-7797-474c-a738-87d9cd8514c7"/>  
@@ -19,4 +24,7 @@ After entering a payload in the login page’s name input, it returned a true va
 
 ## Recommendation
 - Use parameterized queries (prepared statements)
-- Validate and sanitize input
+- Never concatenate user input into SQL statements
+- Apply strict input validation
+- Use least-privilege database accounts
+- Implement proper authentication logic and secure error handling
