@@ -3,12 +3,6 @@
 ## Description
 Path Traversal is a vulnerability that occurs when an application does not properly validate or sanitize user-supplied file paths. An attacker can use sequences such as `../` to navigate outside the intended directory and access sensitive files on the server.
 
-Example:
-
-../../../etc/passwd
-
-TThis allows traversal to parent directories and potential access to system files such as /etc/passwd.
-
 ## Impact
 - Read sensitive system files
 - Access application source code
@@ -23,6 +17,10 @@ TThis allows traversal to parent directories and potential access to system file
 - The parameter was modified to: filename=../../../etc/passwd
 - The modified request was sent to the server.
 - The application returned the contents of /etc/passwd, confirming a Path Traversal vulnerability and unauthorized file access.
+
+**Payload Example:**  
+
+../../../etc/passwd 
   
 ## Evidence
 - Screenshots:
