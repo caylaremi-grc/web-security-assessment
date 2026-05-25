@@ -1,14 +1,13 @@
 #  Path Transversal
 
 ## Description
-Path Traversal is a vulnerability where an application does not properly validate user-supplied file paths.
-An attacker can use sequences like ../ to move outside the intended directory and access sensitive files on the server.
+Path Traversal is a vulnerability that occurs when an application does not properly validate or sanitize user-supplied file paths. An attacker can use sequences such as `../` to navigate outside the intended directory and access sensitive files on the server.
 
 Example:
 
 ../../../etc/passwd
 
-This tells the server to go back multiple directories and read the system file /etc/passwd.
+TThis allows traversal to parent directories and potential access to system files such as /etc/passwd.
 
 ## Impact
 - Read sensitive system files
@@ -19,11 +18,11 @@ This tells the server to go back multiple directories and read the system file /
 - Potentially chain the issue into Remote Code Execution (RCE)
 
 ## Proof of Concept
-- Intercepted an image upload/request using a repeater tool.
-- Original request contained:   filename=52.png
-- Modified the filename parameter to:   filename=../../../etc/passwd
-- Sent the modified request to the server.
-- The application returned the contents of /etc/passwd in the response, confirming that arbitrary file read via Path Traversal was possible.
+- An image/file request was intercepted using a proxy tool (Repeater).  
+- The original request contained a valid file reference: filename=52.png
+- The parameter was modified to: filename=../../../etc/passwd
+- The modified request was sent to the server.
+- The application returned the contents of /etc/passwd, confirming a Path Traversal vulnerability and unauthorized file access.
   
 ## Evidence
 - Screenshots:
@@ -32,12 +31,9 @@ This tells the server to go back multiple directories and read the system file /
   <img width="1242" height="792" alt="image" src="https://github.com/user-attachments/assets/399538af-1e9f-45e7-bac5-4f868d52246a" />
 
 ## Recommendation
-- Validate and sanitize all user-supplied file paths.
-- Reject path traversal sequences such as:   ../
-- Use an allowlist of permitted filenames or directories instead of directly using user input.
-- Normalize file paths before processing them.
-- Restrict file access to a dedicated safe directory (sandbox/jail).
-- Avoid exposing internal filesystem paths in responses.
-- Run the application with least-privileged permissions.
-- Implement proper logging and monitoring for suspicious file access attempts.
+- Validate and sanitize all file path inputs
+- Use allowlists for permitted files instead of raw user input paths
+- Normalize file paths before processing and block traversal sequences (../)
+- Restrict file access to specific directories using strict server-side controls
+- Run the application with least-privilege permissions to limit file access impact
 
