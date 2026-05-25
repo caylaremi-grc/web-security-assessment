@@ -28,7 +28,7 @@ Example payloads:
 After identifying the correct number of columns, the next step is to determine which column can display text data in the web application.
 
 This is tested by replacing one NULL value with a string.
-- `UNION SELECT` Example payload:
+- `UNION SELECT` Example payload:  
 ' UNION SELECT 'abc', NULL, NULL--   
 ' UNION SELECT NULL, 'abc', NULL--  
 ' UNION SELECT NULL, NULL, 'abc'--    
