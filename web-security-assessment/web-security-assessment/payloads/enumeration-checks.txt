@@ -1,0 +1,16 @@
+enumeration-checks.txt
+Basic Enumeration Checks
+
+robots.txt sitemap.xml /admin /login /dashboard /api /.git/ /.env /server-status /phpinfo.php
+
+HTTP Methods
+
+OPTIONS HEAD PUT DELETE TRACE
+
+Headers to Review
+
+Server X-Powered-By Set-Cookie Content-Security-Policy Access-Control-Allow-Origin
+
+Common Files
+
+backup.zip backup.sql config.php.bak .env credentials.txt
