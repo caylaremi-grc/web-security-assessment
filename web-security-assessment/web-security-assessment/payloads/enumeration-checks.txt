@@ -1,4 +1,3 @@
-enumeration-checks.txt
 Basic Enumeration Checks
 
 robots.txt sitemap.xml /admin /login /dashboard /api /.git/ /.env /server-status /phpinfo.php
