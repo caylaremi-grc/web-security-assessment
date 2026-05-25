@@ -1,14 +1,16 @@
 # Cookie Manipulation
 
 ## Description
-Altering cookies to bypass authentication or change user roles.
+Cookie manipulation occurs when an application relies on client-side cookie values for authentication or authorization. If these values are not properly validated on the server side, they can be modified to gain unauthorized access.  
 
 ## Impact
-- Unauthorized access
+- Unauthorized access to other user accounts
 - Privilege escalation
+- Exposure of sensitive user data
+- Session impersonation  
 
 ## Proof of Concept
-Using the browser DevTools, the user_id value in the application cookies was modified to an easily guessable identifier, allowing access to another user’s profile and privilege escalation.
+Using browser Developer Tools, the `user_id` value stored in the application cookies was modified. By changing this value to another valid user identifier, the application granted access to a different user's profile. This demonstrates that the application trusts client-side cookie data for authorization decisions.
 
 ## Evidence
 - Screenshot:
@@ -17,6 +19,8 @@ Using the browser DevTools, the user_id value in the application cookies was mod
 
 
 ## Recommendation
-- Do not trust client-side data for authentication or authorization.
-- Enforce all access control checks on the server side.
-- Use secure, unpredictable session identifiers.
+- Never trust client-side cookie values for authentication or authorization
+- Perform all access control checks on the server side
+- Use secure, random, and signed session identifiers
+- Implement HttpOnly and Secure cookie flags
+- Validate session ownership on every request
