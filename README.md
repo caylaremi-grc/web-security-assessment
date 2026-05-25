@@ -15,6 +15,7 @@ The project includes:
 
 ## Repository Structure
 
+```text
 web-security-assessment/
 │
 ├── findings/
@@ -52,6 +53,7 @@ web-security-assessment/
 │   └── sqlmap-commands.md
 │
 └── README.md
+```
 
 ## Vulnerabilities Covered
 - SQL Injection
