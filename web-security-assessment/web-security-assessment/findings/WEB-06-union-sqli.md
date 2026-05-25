@@ -1,14 +1,23 @@
 #  Union-sqli
 
 ## Description
-
+This vulnerability allows an attacker to manipulate SQL queries using UNION-based SQL injection. By injecting crafted input, an attacker can combine results from the original query with results from other database queries.
 
 ## Impact
-- 
-- 
-- 
+- Unauthorized access to database structure
+- Exposure of sensitive data (e.g., usernames, passwords, emails)
+- Ability to extract data from other tables
+- Potential full database compromise depending on privileges
 
 ## Proof of Concept
+**Determining the Number of Columns**
+The vulnerability was tested using two common techniques to determine the number of columns returned by the SQL query:
+- `ORDER BY`
+- `UNION SELECT`
+Example payloads:
+' UNION SELECT NULL--
+' UNION SELECT NULL,NULL--
+' UNION SELECT NULL,NULL,NULL--
 
 ## Evidence Step 1 - Determining the Number of Columns
 **Method 1 — ORDER BY**
@@ -34,14 +43,6 @@
   <img width="272" height="147" alt="image" src="https://github.com/user-attachments/assets/871366fc-aa94-4dcd-8519-527964eeb26c" />
   <img width="431" height="52" alt="image" src="https://github.com/user-attachments/assets/370e61fb-af9a-426d-9c23-d27ae165b6f3" />
   <img width="627" height="396" alt="image" src="https://github.com/user-attachments/assets/fa4e1ac9-6067-45ef-88b4-71905b1843e8" />
-
-
-  
-
-
-
-  
-
 
 ## Recommendation
 - 
