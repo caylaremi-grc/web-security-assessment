@@ -1,18 +1,26 @@
 # IDOR (Insecure Direct Object Reference)
 
 ## Description
-Accessing unauthorized data by changing object IDs.
+IDOR occurs when an application exposes direct references to internal objects (such as IDs, files, or database keys) and fails to properly verify whether the authenticated user is authorized to access them.
 
 ## Impact
-- Data exposure
-- Unauthorized access
+- Unauthorized access to sensitive data
+- Data exposure between users
+- Potential privilege escalation
+- Violation of data confidentiality
 
 ## Proof of Concept
-After intercepting an HTTP download request in Burp Suite’s HTTP history, I sent it to Repeater and manually modified the object ID to access unauthorized data. In this case, I changed:
-- GET /download-transcript/3.txt HTTP/2
-to:
-- GET /download-transcript/1.txt HTTP/2
+After intercepting an HTTP download request in Burp Suite’s HTTP history, the request was sent to Repeater. The object identifier in the URL was manually modified to access resources belonging to another user.
+
+This demonstrates that the application does not properly enforce authorization checks on object-level requests.
+
+**Original Request:**  
+- GET /download-transcript/3.txt HTTP/2  
+**Modified Request:**  
+- GET /download-transcript/1.txt HTTP/2  
 which allowed access to another user’s private conversation.
+**Result**
+ - The modified request successfully returned another user’s private conversation, confirming the IDOR vulnerability. 
 
 ## Evidence
 - Screenshots
@@ -22,6 +30,6 @@ which allowed access to another user’s private conversation.
 
 ## Recommendations
 - Enforce server-side authorization checks on every request
-- Verify the authenticated user owns or is permitted to access the requested object/resource
-- Avoid exposing predictable object IDs directly (use indirect references/UUIDs if possible)
-- Implement proper access control and least-privilege principles
+- Verify that the authenticated user owns or is permitted to access the requested resource
+- Avoid exposing predictable object identifiers (use UUIDs or indirect references where possible)
+- Implement strict access control and least-privilege principles
