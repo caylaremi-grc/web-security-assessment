@@ -15,10 +15,12 @@ After intercepting an HTTP download request in Burp Suite’s HTTP history, the 
 This demonstrates that the application does not properly enforce authorization checks on object-level requests.
 
 **Original Request:**  
-- GET /download-transcript/3.txt HTTP/2  
+- GET /download-transcript/3.txt HTTP/2
+ 
 **Modified Request:**  
 - GET /download-transcript/1.txt HTTP/2  
-which allowed access to another user’s private conversation.  
+which allowed access to another user’s private conversation.
+  
 **Result**
  - The modified request successfully returned another user’s private conversation, confirming the IDOR vulnerability. 
 
