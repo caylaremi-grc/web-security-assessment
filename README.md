@@ -15,7 +15,6 @@ The project includes:
 
 ## Repository Structure
 
-```text
 web-security-assessment/
 │
 ├── findings/
