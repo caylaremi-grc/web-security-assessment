@@ -29,6 +29,15 @@
   <img width="627" height="204" alt="image" src="https://github.com/user-attachments/assets/815dc268-3f00-4786-9f37-0a80ee6ba978" />
 
 ## Evidence Step 2 - Find a string-compatible column
+- Screenshots:
+  <img width="356" height="49" alt="image" src="https://github.com/user-attachments/assets/eaf429da-8ade-4ebb-be35-aafd409d0f01" />
+  <img width="272" height="147" alt="image" src="https://github.com/user-attachments/assets/871366fc-aa94-4dcd-8519-527964eeb26c" />
+  <img width="431" height="52" alt="image" src="https://github.com/user-attachments/assets/370e61fb-af9a-426d-9c23-d27ae165b6f3" />
+  <img width="627" height="396" alt="image" src="https://github.com/user-attachments/assets/fa4e1ac9-6067-45ef-88b4-71905b1843e8" />
+
+
+  
+
 
 
   
