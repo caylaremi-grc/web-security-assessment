@@ -10,7 +10,7 @@
 
 ## Proof of Concept
 
-## Evidence Determining the Number of Columns
+## Evidence Step 1 - Determining the Number of Columns
 **Method 1 — ORDER BY**
 - Screenshots:
   <img width="810" height="788" alt="order by 1" src="https://github.com/user-attachments/assets/9aa36dc2-f65e-4658-a6ad-367d4b7aadb7" />
@@ -28,7 +28,7 @@
   <img width="627" height="391" alt="image" src="https://github.com/user-attachments/assets/fa104585-debe-4564-b0a6-c460b0c1fefe" />
   <img width="627" height="204" alt="image" src="https://github.com/user-attachments/assets/815dc268-3f00-4786-9f37-0a80ee6ba978" />
 
-
+## Evidence Step 2 - Find a string-compatible column
 
 
   
