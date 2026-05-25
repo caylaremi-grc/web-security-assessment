@@ -1,0 +1,31 @@
+Numeric ID Manipulation
+
+/user/1
+/user/2
+/user/3
+
+/order/1001
+/order/1002
+
+/download/1.pdf
+/download/2.pdf
+
+Parameter-Based IDOR
+
+?id=1
+?id=2
+?user_id=1
+?account_id=10
+
+UUID Testing
+
+/profile/550e8400-e29b-41d4-a716-446655440000
+
+HTTP Body Manipulation
+
+{ "user_id": 2 }
+
+Cookie Manipulation
+
+user_id=2
+role=admin
